@@ -1,9 +1,14 @@
-import {MainScreenProps} from '../screens/Main/types';
+import {MenuScreenProps} from '../screens/Menu/types';
+import {MyIpInfoScreenProps} from '../screens/MyIpInfo/types';
 
 export enum Screens {
-  Main = 'Main',
+  Menu = 'NetHealth',
+  MyIpInfo = 'My IP Info',
+  FindIpInfo = 'Find IP Info',
+  SpeedTest = 'SpeedTest',
 }
 
 export type StackNavigatorScreens = {
-  [Screens.Main]: MainScreenProps;
+  [Screens.Menu]: MenuScreenProps;
+  [Screens.MyIpInfo]: MyIpInfoScreenProps;
 };

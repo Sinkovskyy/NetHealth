@@ -7,9 +7,14 @@
 
 import React from 'react';
 import {Navigator} from './src/navigation';
+import {SafeAreaView} from 'react-native';
 
 function App() {
-  return <Navigator />;
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <Navigator />
+    </SafeAreaView>
+  );
 }
 
 export default App;

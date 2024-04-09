@@ -18,6 +18,10 @@ export const MenuScreen = () => {
     navigation.navigate(Screens.MyIpInfo as never);
   };
 
+  const onFindByIPPress = () => {
+    navigation.navigate(Screens.FindIpInfo as never);
+  };
+
   return (
     <View style={styles.container}>
       <Buttons.Tile
@@ -38,6 +42,7 @@ export const MenuScreen = () => {
         height={TILE_SIZE}
         asset={Assets.anotherIpAddress}
         title={'Пошук по IP'}
+        onPress={onFindByIPPress}
       />
     </View>
   );

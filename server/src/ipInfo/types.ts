@@ -12,10 +12,3 @@ export type GetIpInfoResponse = {
   time_zone: string;
   zip_code: string;
 };
-
-export type TracerouteHop = {
-  ipAddress?: string;
-  full: string;
-  latitude: number;
-  longitude: number;
-};

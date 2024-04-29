@@ -1,27 +1,22 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Map} from '../../modules/Map';
 import {useNetInfo} from '../../common/hooks';
-import {Image, TextInput, TouchableOpacity, View} from 'react-native';
+import {View} from 'react-native';
 import {Sections} from '../../components/sections';
 import {styles} from './styles';
-import {Assets} from '../../common/assets';
+import {IpSearch} from '../../components/sections/IpSearch';
 
 export const FindByIp = () => {
   const [searchedIpAddress, setSearchedIpAddress] = useState<
     string | undefined
   >(undefined);
 
-  const [searchValue, setSearchValue] = useState('');
   const {fetchLocationData, netInfo} = useNetInfo();
 
   const showInfo = useMemo(
     () => !!searchedIpAddress && !!netInfo,
     [netInfo, searchedIpAddress],
   );
-
-  const onSearch = () => {
-    setSearchedIpAddress(searchValue);
-  };
 
   useEffect(() => {
     if (!searchedIpAddress) {
@@ -32,20 +27,9 @@ export const FindByIp = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.searchContainer}>
-        <TextInput
-          style={styles.textInput}
-          keyboardType="numeric"
-          placeholder="Введіть IP адресу"
-          onChangeText={setSearchValue}
-        />
+      <IpSearch onSearch={setSearchedIpAddress} />
 
-        <TouchableOpacity style={styles.searchButton} onPress={onSearch}>
-          <Image source={Assets.search} style={styles.searchImage} />
-        </TouchableOpacity>
-      </View>
-
-      {showInfo && (
+      {showInfo && netInfo && (
         <View>
           <Map
             coords={{

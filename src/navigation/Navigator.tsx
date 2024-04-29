@@ -5,6 +5,7 @@ import {Screens, StackNavigatorScreens} from './types';
 import {MenuScreen} from '../screens/Menu';
 import {MyIpInfoScreen} from '../screens/MyIpInfo';
 import {FindByIp} from '../screens/FindByIp';
+import {TraceRoute} from '../screens/Traceroute';
 
 const Stack = createNativeStackNavigator<StackNavigatorScreens>();
 
@@ -15,6 +16,7 @@ export const Navigator = () => {
         <Stack.Screen name={Screens.Menu} component={MenuScreen} />
         <Stack.Screen name={Screens.MyIpInfo} component={MyIpInfoScreen} />
         <Stack.Screen name={Screens.FindIpInfo} component={FindByIp} />
+        <Stack.Screen name={Screens.Traceroute} component={TraceRoute} />
       </Stack.Navigator>
     </NavigationContainer>
   );

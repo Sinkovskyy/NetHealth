@@ -22,6 +22,10 @@ export const MenuScreen = () => {
     navigation.navigate(Screens.FindIpInfo as never);
   };
 
+  const onTraceroutePress = () => {
+    navigation.navigate(Screens.Traceroute as never);
+  };
+
   return (
     <View style={styles.container}>
       <Buttons.Tile
@@ -43,6 +47,14 @@ export const MenuScreen = () => {
         asset={Assets.anotherIpAddress}
         title={'Пошук по IP'}
         onPress={onFindByIPPress}
+      />
+
+      <Buttons.Tile
+        width={MONO_TILE_WIDTH}
+        height={TILE_SIZE}
+        asset={Assets.tracking}
+        title={'Traceroute'}
+        onPress={onTraceroutePress}
       />
     </View>
   );

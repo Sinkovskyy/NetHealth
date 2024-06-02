@@ -1,6 +1,7 @@
 import {FindByIpScreenProps} from '../screens/FindByIp/types';
 import {MenuScreenProps} from '../screens/Menu/types';
 import {MyIpInfoScreenProps} from '../screens/MyIpInfo/types';
+import {SpeedTestScreenProps} from '../screens/SpeedTest/types';
 import {TracerouteScreenProps} from '../screens/Traceroute/types';
 
 export enum Screens {
@@ -16,4 +17,5 @@ export type StackNavigatorScreens = {
   [Screens.MyIpInfo]: MyIpInfoScreenProps;
   [Screens.FindIpInfo]: FindByIpScreenProps;
   [Screens.Traceroute]: TracerouteScreenProps;
+  [Screens.SpeedTest]: SpeedTestScreenProps;
 };

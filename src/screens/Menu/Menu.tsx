@@ -29,12 +29,6 @@ export const MenuScreen = () => {
   return (
     <View style={styles.container}>
       <Buttons.Tile
-        width={MONO_TILE_WIDTH}
-        height={TILE_SIZE}
-        asset={Assets.speedTest}
-        title="Тест швидкості інтернету"
-      />
-      <Buttons.Tile
         width={TILE_SIZE}
         height={TILE_SIZE}
         asset={Assets.myIpAddress}
